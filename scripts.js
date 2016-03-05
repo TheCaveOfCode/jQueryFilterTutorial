@@ -1,43 +1,41 @@
-$(function() {
-  $('#filter').keyup(filter);
+$(function () {
+    $('#searchfield').keyup(filter);
 
-  $('.pressable-day').click(function() {
-    $(this).toggleClass('active');
+    $('.pressable-day').click(function () {
+        $(this).toggleClass('active');
 
-    filter();
-  });
+        filter();
+    });
 
-  function filter() {
-    var rex = new RegExp($('#filter').val(), 'i');
-    var rows = $('.searchable .schedule-row');
+    function filter() {
+        var rex = new RegExp($('#searchfield').val(), 'i');
+        var rows = $('.searchable tr');
 
-    rows.hide();
+        rows.hide();
 
-    rows.filter(function() {
+        rows.filter(function () {
 
-      var tester = true;
+            var tester = true;
 
-      tester = filterOnDays(this);
+            tester = rex.test($(this).text());
 
-      if (rex) {
-        tester = tester && rex.test($(this).text());
-      }
+            tester = tester && filterOnDays(this);
 
-      return tester;
-    }).show();
-  }
-
-  function filterOnDays(selector) {
-    var tester = true;
-    var all = $('#trWithDays .pressable-day.active');
-
-    for (var i = 0; i < all.length; i++) {
-      var day = $(selector).find("[data-schedule='" + all[i].id + "']");
-
-      if (!day.hasClass('active')) {
-        tester = false;
-      }
+            return tester;
+        }).show();
     }
-    return tester;
-  }
+
+    function filterOnDays(selector) {
+        var tester = true;
+        var all = $('#days .pressable-day.active');
+
+        for (var i = 0; i < all.length; i++) {
+            var day = $(selector).find('[data-schedule="' + all[i].id + '"]');
+
+            if (!day.hasClass('active')) {
+                tester = false;
+            }
+        }
+        return tester;
+    }
 });
