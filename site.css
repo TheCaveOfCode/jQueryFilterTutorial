@@ -1,80 +1,46 @@
-.pointer {
-  cursor: pointer;
+table {
+    width: 100%;
 }
 
-.scheduleDay {
-  width: 20% !important;
-  table-layout: fixed;
-}
-
-.circle {
-  width: 100%;
-  padding-top: 25%;
-  padding-bottom: 30%;
-  border-radius: 50%;
-  border-width: 8px;
-  border-color: forestgreen;
-  border-style: solid;
-  text-align: center;
-  opacity: 0.10;
-}
-
-.circle.active {
-  opacity: 1;
-}
-
-span.glyphicon-plus {
-  font-size: 4.8em;
-}
-
-.scheduleColor {
-  color: forestgreen;
-}
-
-.schedule-name {
-  line-height: 2em;
-  color: black;
-  text-decoration: underline;
-}
-
-.schedule-row {
-  border-bottom-width: 0.1em;
-  border-bottom-style: solid;
-  border-bottom-color: rgba(192, 192, 192, 1.0)
-}
-
-span.booking.glyphicon-ok {
-  font-size: 2em;
-  color: forestgreen;
-  opacity: 0.1;
-}
-
-span.booking.glyphicon-ok.active {
-  opacity: 1;
-}
-
-.pressable-day {
-  padding: 10px 20px 10px 20px;
-}
-
-.pressable-day.active {
-  background-color: forestgreen;
-  border-radius: 50px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: forestgreen;
-  color: white;
-  padding: 10px 20px 10px 20px;
-}
-
-.searchfield {
+#searchfield {
   margin-bottom: 10px;
   margin-top: 15px;
   padding-right: 5%
 }
 
-.wrapper {
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 90%;
+.pressable-day {
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+}
+
+.pressable-day.active {
+  background-color: forestgreen;
+  color: white;
+  border-radius: 50px;
+}
+
+.schedule-color {
+  color: forestgreen;
+}
+
+.row-border {
+  border-bottom-width: 0.1em;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(192, 192, 192, 1.0)
+}
+
+h4 {
+  line-height: 2em;
+  color: black;
+  text-decoration: underline;
+}
+
+.booking.glyphicon-ok {
+  font-size: 2em;
+  color: forestgreen;
+  opacity: 0.1;
+}
+
+.booking.glyphicon-ok.active {
+  opacity: 1;
 }
